@@ -1,0 +1,39 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: cursive;
+    background: linear-gradient(to bottom right , #403F44, #1e1b32);
+    color: white;
+    height: 100vh;
+}
+.main-box {
+    display: flex;
+    justify-content: center;
+    border: 2px solid rgb(0, 0, 0);
+    background: linear-gradient(to bottom right , #403F44, #1e1b32);
+    height: 100px;
+    width: 400px;
+    border-radius: 10px;
+}
+a {
+    text-decoration: none;
+    color: white;
+}
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto; 
+    background: linear-gradient(to bottom right, #403F44, #1e1b32);
+    border: 2px solid black;
+    border-radius: 50px; 
+    width: 350px;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+    height: 50px;
+}
+.navbar:hover {
+     box-shadow: 0 0 5px #33CCFC;
+}

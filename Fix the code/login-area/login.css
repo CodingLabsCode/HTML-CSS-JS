@@ -1,0 +1,89 @@
+body {
+    margin: 0;
+    height: 100vh;
+    font-family: sans-serif;
+    background: linear-gradient(to bottom right, #403F44, #1e1b32);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 15px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+}
+
+.inputs input {
+    padding: 12px;
+    border-radius: 25px;
+    border: 1px solid white;
+    background: transparent;
+    color: white;
+    outline: none;
+}
+
+.inputs input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.remember {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    font-size: 14px;
+}
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    border-radius: 25px;
+    border: none;
+    background: white;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+.forgot {
+    font-size: 13px;
+    color: white;
+    text-decoration: none;
+}
+
+.register {
+    font-size: 14px;
+}
+
+.register span {
+    font-weight: bold;
+    cursor: pointer;
+}
