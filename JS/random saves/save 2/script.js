@@ -6,7 +6,7 @@ const upgradeID = document.querySelector("#upgrade");
 const temp = document.querySelector("#temptext");
 let count = 0;
 let upgrade = 1;
-let upgradeindex = 1;
+let upgradeindex = 50;
 
 upgradeID.addEventListener("click", () => {
     if (count >= upgradeindex) {
