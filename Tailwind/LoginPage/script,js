@@ -13,13 +13,16 @@ let users = {
 
 themeBtn.addEventListener("click", () => {
     if (darkMode) {
-        body.style.backgroundColor = "rgb(33,33,33)";
+        document.body.style.backgroundColor = "rgb(33,33,33)";
+        document.body.style.color = "white";
         modeText.textContent = "Light mode";
         darkMode = false;
     } else{
-        body.style.backgroundColor = "rgb(255,255,255)";
+        document.body.style.backgroundColor = "rgb(255,255,255)";
+        document.body.style.color = "black";
         modeText.textContent = "Dark mode";
         darkMode = true;
+        
     }
 });
 
@@ -39,9 +42,9 @@ loginBtn.addEventListener("click", () => {
             message("Logged in");
             window.location.href = "index2.html"
         }else {
-            message("Invailed username / password");
+            message("Invaled username / password");
         }
     }else{
-        message("Invailed username / password");
+        message("Invaled username / password");
     } 
 });
