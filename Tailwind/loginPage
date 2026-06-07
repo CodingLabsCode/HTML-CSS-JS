@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    </head>
+    <body class="flex justify-center items-center 
+        flex-col h-screen bg-[rgb(33,33,33)]
+        text-white">
+
+        <button id="themeBtn" class="flex justify-center border 
+        rounded-lg w-1/4 p-2 cursor-pointer active:scale-105
+        w-1/2">
+            <span id="modeText">Light mode</span></button>
+        <br>
+
+        <form class="border rounded-lg p-10 shadow-2xl">
+            <h1 class="font-bold">Welcome Back</h1>
+            <p class="">Enter details to see dashboard</p>
+            <br>
+
+            <div class="flex flex-col"> 
+                <label for="username">Username</label>       
+                <input class="border-0 border-b-1 focus:scale-105
+                hover:scale-105"
+                id="usernameInput" 
+                type="text">
+
+                <label for="password">Password</label>
+                <input class="border-0 border-b-1 hover:scale-105
+                focus:scale-105"
+                id="passwordInput" 
+                type="password">
+            </div>
+
+            <div class="flex justify-center gap-2 m-2">
+                <input class="" type="checkbox">
+                <label>Remember me</label>
+            </div>
+
+            <div class="flex justify-center ">
+                <button class="border rounded-lg w-5/4 p-2 bg-blue-600
+                    cursor-pointer gap-5 active:scale-105"
+                    type="button" 
+                    id="loginBtn">Login</button>
+            </div>
+            <br>
+
+            <p class="flex justify-center" id="tempText"></p>
+        </form>
+        <script src="script.js"></script>
+    </body>
+</html>
