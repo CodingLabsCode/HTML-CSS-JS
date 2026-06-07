@@ -1,0 +1,47 @@
+const usernameInput = document.querySelector("#usernameInput");
+const passwordInput = document.querySelector("#passwordInput");
+const loginBtn = document.querySelector("#loginBtn");
+const temptext = document.querySelector("#tempText");
+const themeBtn = document.querySelector("#themeBtn")
+const modeText = document.querySelector("#modeText")
+let darkMode = false;
+
+let users = {
+    "admin": "123",
+    "test": "1234"
+}
+
+themeBtn.addEventListener("click", () => {
+    if (darkMode) {
+        body.style.backgroundColor = "rgb(33,33,33)";
+        modeText.textContent = "Light mode";
+        darkMode = false;
+    } else{
+        body.style.backgroundColor = "rgb(255,255,255)";
+        modeText.textContent = "Dark mode";
+        darkMode = true;
+    }
+});
+
+function message(msg){
+    temptext.textContent = msg;
+    setTimeout(()=> {
+        temptext.textContent = "";
+    },1000)
+}
+
+loginBtn.addEventListener("click", () => {
+    const enteredUser = usernameInput.value;
+    const enteredPass = passwordInput.value;
+
+    if (enteredUser && enteredPass){
+        if (users[enteredUser] === enteredPass) {
+            message("Logged in");
+            window.location.href = "index2.html"
+        }else {
+            message("Invailed username / password");
+        }
+    }else{
+        message("Invailed username / password");
+    } 
+});
