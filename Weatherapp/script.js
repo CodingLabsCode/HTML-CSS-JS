@@ -5,7 +5,7 @@ const condtions = document.querySelector("#condtions")
 const temp = document.querySelector("#temp")
 const userinput = document.querySelector("#userinput")
 const errorText = document.querySelector("#errorText")
-const apiKey = "API KEY HIDDEN"
+const apiKey = "e969fa1f1d33e02j1214f85b41e8937"
 
 function reset() {location.reload()}
 
