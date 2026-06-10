@@ -4,45 +4,51 @@
         <title>JS Practice</title>
         <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     </head>
-    <body class="h-screen flex justify-center items-center
-        bg-[rgb(33,33,33)]
-        [background-image:linear-gradient(rgba(255,255,255,0.15)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.15)_1px,transparent_1px)]
-        bg-[length:40px_40px]">
-        <section class="flex items-center flex-col w-125
-                        shadow-2xl shadow-black p-16 
-                        bg-[rgb(33,33,33)] text-white border rounded-lg">
+    <body class="flex justify-center items-center h-screen 
+            bg-linear-to-br from-blue-500 to-purple-500">
+            
+        <main class="bg-white/95 p-4 rounded-lg shadow-2xl shadow-black w-1/2">
             <div>
-                <h1 class="font-bold text-2xl mb-1">Clicker Game</h1>
-                <p class="mb-3 font-light">Click to gain score</p>
+                <h1 class="font-bold text-4xl mb-1">Clicker Game</h1>
+                <p class="mb-3 font-light text-2xl">Click to gain score</p>
             </div>
+
             <p class="font-semibold mb-5 text-xl">Score <span id="score">0</span></p>
 
-            <div>
-                <button class="border border-dashed p-2 w-40 mr-4 rounded-lg
-                    hover:scale-95 active:scale-105 cursor-pointer" 
-                    id="increase">Increase</button>
+            <section class="flex flex-col gap-3">
+                <button class="border p-4 w-full mr-4 rounded-lg active:scale-95
+                        cursor-pointer transition hover:bg-gray-200" id="increase"
+                        >Increase</button>
 
-                <button class="border border-dashed p-2 w-40 rounded-lg
-                    hover:scale-95 active:scale-105 cursor-pointer" 
-                    id="decrease">Decrease</button>
-            </div>
+                <button class="border p-4 w-full mr-4 rounded-lg active:scale-95 
+                        cursor-pointer transition hover:bg-gray-200" id="decrease"
+                        >Decrease</button>
 
-            <div>
-                 <button class="border border-dashed p-2 w-40 mt-4 mb-3 rounded-lg
-                    hover:scale-95 active:scale-105 cursor-pointer"
-                    id="upgradebtn">Upgrade</button>
-            </div>
-            <p id="temptext"></p>
-            <hr class="border w-full mb-3">
-            <h1 class="font-semibold text-xl">STATS</h1>
+                <button class="border p-4 w-full mr-4 rounded-lg active:scale-95
+                         cursor-pointer transition hover:bg-gray-200" id="reset"
+                         >Reset</button>
+
+                 <button class="border p-4 w-full mr-4 rounded-lg active:scale-95 
+                        cursor-pointer transition hover:bg-gray-200" id="upgradebtn"
+                        >Upgrade</button>
+            </section>
+            <p class="flex justify-center" id="temptext"></p>
+            <hr class="m-3">
+            <h1 class="font-semibold text-xl">Statistics:</h1>
+            <br>
 
             <div class="flex items-start w-full">
-                <p class="font-semibold" id="clicks">Amount of clicks: </p>
+                <p class="font-semibold" id="clicks">Clicks: 0</p>
             </div>
+
             <div class="flex items-start w-full">
-                <p class="font-semibold" id="amountofupgrades">Amount of upgrades: </p>
+                <p class="font-semibold" id="amountofupgrades">Amount of upgrades: 0</p>
             </div>
-        </section>
+
+            <div>
+                <p class="font-semibold" id="highscore">Highest score: 0</p>
+            </div>
+        </main>
         <script src="script.js"></script>
     </body>
 </html>
