@@ -5,12 +5,31 @@ const upgradeBtn = document.querySelector("#upgradebtn")
 const tempText = document.querySelector("#temptext")
 const click = document.querySelector("#clicks")
 const amountOfUpgrade = document.querySelector("#amountofupgrades")
+const resetBtn = document.querySelector("#reset")
+const highscore = document.querySelector("#highscore")
 
+let highestscore = 0
 let clicks = 0
 let upgrades = 0
 let count = 0
 let upgrade = 1
 let upgradeIndex = 50
+
+resetBtn.addEventListener("click", () => {
+     if (count == 0) {
+        reset.style.backgroundColor = "rgba(255,0,0,0.35)"
+        tempText.textContent = "You are already at  0"
+        tempText.style.color = "red"
+        setTimeout(() => {
+            reset.style.backgroundColor = "transparent"
+            tempText.textContent = ""
+        },1000)
+    } else {
+        count = 0
+        score.textContent = count
+    }
+})
+
 
 upgradeBtn.addEventListener("click", () => {
     if (count < upgradeIndex) {
@@ -39,14 +58,15 @@ upgradeBtn.addEventListener("click", () => {
     }
 })
 
-
-
-
 increase.addEventListener("click", () => {
     count += upgrade
     clicks ++
-    click.textContent = `Amount of clicks: ${clicks}`
-    score.textContent = count 
+    click.textContent = `All time clicks: ${clicks}`
+    score.textContent = count
+    if (count > highestscore) {
+        highestscore = count
+        highscore.textContent = `Highest score: ${highestscore}`
+    }
 })
 
 decrease.addEventListener("click", () => {
