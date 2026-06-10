@@ -1,23 +1,47 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Clicker</title>
-        <link rel="stylesheet" href="style.css">
+        <title>JS Practice</title>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     </head>
-    <body>
-        <section>
-            <h1>Counter Game</h1>
-            <p>Count:</p>
-            <span id="score">0</span>
-            <div class = "buttons">
-                <button id="increase">Increase</button>
-                <button id="reset">Reset</button>
-                <button id="decrease">Decrease</button>
-            </div>
+    <body class="h-screen flex justify-center items-center
+        bg-[rgb(33,33,33)]
+        [background-image:linear-gradient(rgba(255,255,255,0.15)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.15)_1px,transparent_1px)]
+        bg-[length:40px_40px]">
+        <section class="flex items-center flex-col w-125
+                        shadow-2xl shadow-black p-16 
+                        bg-[rgb(33,33,33)] text-white border rounded-lg">
             <div>
-                <button id="upgrade">Upgrade</button>
+                <h1 class="font-bold text-2xl mb-1">Clicker Game</h1>
+                <p class="mb-3 font-light">Click to gain score</p>
+            </div>
+            <p class="font-semibold mb-5 text-xl">Score <span id="score">0</span></p>
+
+            <div>
+                <button class="border border-dashed p-2 w-40 mr-4 rounded-lg
+                    hover:scale-95 active:scale-105 cursor-pointer" 
+                    id="increase">Increase</button>
+
+                <button class="border border-dashed p-2 w-40 rounded-lg
+                    hover:scale-95 active:scale-105 cursor-pointer" 
+                    id="decrease">Decrease</button>
+            </div>
+
+            <div>
+                 <button class="border border-dashed p-2 w-40 mt-4 mb-3 rounded-lg
+                    hover:scale-95 active:scale-105 cursor-pointer"
+                    id="upgradebtn">Upgrade</button>
             </div>
             <p id="temptext"></p>
+            <hr class="border w-full mb-3">
+            <h1 class="font-semibold text-xl">STATS</h1>
+
+            <div class="flex items-start w-full">
+                <p class="font-semibold" id="clicks">Amount of clicks: </p>
+            </div>
+            <div class="flex items-start w-full">
+                <p class="font-semibold" id="amountofupgrades">Amount of upgrades: </p>
+            </div>
         </section>
         <script src="script.js"></script>
     </body>
