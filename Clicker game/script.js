@@ -1,59 +1,66 @@
-const increase = document.querySelector("#increase");
-const reset = document.querySelector("#reset");
-const decrease = document.querySelector("#decrease");
-const score = document.querySelector("#score");
-const upgradeID = document.querySelector("#upgrade");
-const temp = document.querySelector("#temptext");
-let count = 0;
-let upgrade = 1;
-let upgradeindex = 50;
+const score = document.querySelector("#score")
+const increase = document.querySelector("#increase")
+const decrease = document.querySelector("#decrease")
+const upgradeBtn = document.querySelector("#upgradebtn")
+const tempText = document.querySelector("#temptext")
+const click = document.querySelector("#clicks")
+const amountOfUpgrade = document.querySelector("#amountofupgrades")
 
-upgradeID.addEventListener("click", () => {
-    if (count >= upgradeindex) {
-        upgrade *= 2;
-        upgradeindex *= 2;
-        count = 0;
-        score.textContent = count;
-        upgradeID.style.background = "rgb(0,255,17,0.15)";
+let clicks = 0
+let upgrades = 0
+let count = 0
+let upgrade = 1
+let upgradeIndex = 50
+
+upgradeBtn.addEventListener("click", () => {
+    if (count < upgradeIndex) {
+        tempText.style.color = "red"
+        tempText.textContent = `You need ${upgradeIndex} score to upgrade`
+        upgradeBtn.style.backgroundColor = "rgb(255,0,0,0.35)";
         setTimeout(() => {
-           upgradeID.style.background = "transparent";
-        }, 600);
+            tempText.textContent = ""
+        upgradeBtn.style.backgroundColor = "transparent"
+        },1000)
     } else {
-        upgradeID.style.backgroundColor = "rgb(255,0,0,0.35)";
-        temp.textContent = `You Need ${upgradeindex}`;
+        upgrades ++
+        amountOfUpgrade.textContent = `Amount of upgrades: ${upgrades}`
+        upgrade *= 2
+        upgradeIndex *= 2
+        count = 0
+        score.textContent = count
+        tempText.style.color = "green"
+        tempText.textContent = "UPGRADE"
+        upgradeBtn.style.backgroundColor = "rgba(0,255,17,0.15)"
+        
         setTimeout(() => {
-            upgradeID.style.backgroundColor = "transparent"
-            temp.textContent = ""
+            tempText.textContent = ""
+            upgradeBtn.style.backgroundColor = "transparent"
         },1000)
     }
-});
+})
+
+
+
 
 increase.addEventListener("click", () => {
-    count += upgrade;
-    score.textContent = count;
-});
-reset.addEventListener("click", () => {
-    if (count == 0) {
-        reset.style.backgroundColor = "rgb(255,0,0,0.35)";
-        temp.textContent = "You Are Already At 0"
-        setTimeout(() => {
-        reset.style.backgroundColor = "transparent"
-        temp.textContent = ""
-    }, 1000);
-    }
-    count = 0;
-    score.textContent = count;
-});
+    count += upgrade
+    clicks ++
+    click.textContent = `Amount of clicks: ${clicks}`
+    score.textContent = count 
+})
+
 decrease.addEventListener("click", () => {
     if (count == 0) {
-        count ++;
-        decrease.style.backgroundColor = "rgb(255,0,0,0.35)";
-        temp.textContent = "You Cant Go Below 0"
+        count ++
+        decrease.style.backgroundColor = "rgba(255,0,0,0.35)"
+        tempText.textContent = "You cant go below 0"
+        tempText.style.color = "red"
         setTimeout(() => {
-        decrease.style.backgroundColor = "transparent"
-        temp.textContent = ""
-    }, 1000);
+            decrease.style.backgroundColor = "transparent"
+            tempText.textContent = ""
+        },1000)
+    } else {
+        count --
+        score.textContent = count
     }
-    count --;
-    score.textContent = count;
-});
+})
