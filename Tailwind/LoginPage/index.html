@@ -4,29 +4,20 @@
         <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     </head>
     <body class="flex justify-center items-center 
-        flex-col h-screen bg-[rgb(33,33,33)]
-        text-white">
-
-        <button id="themeBtn" class="flex justify-center border 
-        rounded-lg w-1/2 p-2 cursor-pointer active:scale-105
-        w-1/2"><span id="modeText">Light mode</span></button>
-
-        <br>
-
-        <form class="border rounded-lg p-10 shadow-2xl">
-            <h1 class="font-bold">Welcome Back</h1>
-            <p class="">Enter details to see dashboard</p>
-
-            <br>
+        flex-col h-screen bg-white
+        text-black">
+        <form class="border rounded-lg p-10 shadow-2xl absolute -screen 
+                flex flex-col ">
+            <h1 class="font-bold mb-1">Welcome Back</h1>
+            <p class="mb-4">Enter details to see dashboard</p>
 
             <div class="flex flex-col"> 
                 <label for="username">Username</label>       
                 <input class="border-0 border-b focus:scale-105
-                hover:scale-105"
+                hover:scale-105 mb-4"
                 id="usernameInput" 
                 type="text">
-                <br>
-
+                
                 <label for="password">Password</label>
                 <input class="border-0 border-b hover:scale-105
                 focus:scale-105"
@@ -34,7 +25,6 @@
                 type="password">
             </div>
 
-            <br>
 
             <div class="flex justify-center gap-2 m-2">
                 <input class="" type="checkbox">
@@ -43,8 +33,9 @@
             <br>
 
             <div class="flex justify-center ">
-                <button class="border rounded-lg w-full p-2 bg-blue-600
-                    cursor-pointer gap-5 active:scale-105 hover:scale-105"
+                <button class="w-full p-2 bg-blue-600
+                    cursor-pointer gap-5 active:scale-105 
+                    hover:scale-105 text-white active:scale-115 hover:scale-95"
                     type="button" 
                     id="loginBtn">Login</button>
             </div>
@@ -59,7 +50,35 @@
 
             <br>
 
-            <p class="flex justify-center" id="tempText"></p>
+            <p class="flex justify-center mb-3" id="tempText"></p>
+            <hr>
+
+            <div class="flex flex-col mt-2">
+                <button class="flex items-center border rounded-lg
+                            hover:scale-95 active:scale-105 h-14 justify-center
+                            hover:bg-blue-200 mt-4">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAdVBMVEX////yUCKAugECpO//uQIAoO7/tgCdyVLySxnxRAP6vrLO46x5twCs2/j/46wAou/1e2D/yFNSuPL0dVf7y8HY6byZx0i84vr/6LxItfL/xkj3moWz1XryRg3xNwByswD9497q89vb8Pz/89sAm+56yPX/1Ho9Y5PxAAABIElEQVR4nO3PV2pCURRAUaN51mfvJbE7/yEKF/ObjyM5EFh7ABtWoyFJkiRJkiRJkiRJkiRJkiTpt/aTcPNFOSxXnXCHBOHkqxut1y+HQd2MVncyhN2PaO8Lm4SEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhIT5wnkv3PdLeKzDrRKEi368UzmcB/GWCUJJ+vvWw3iXcriO4m0ShNsq3G1YDqN2vF2CcDZuRat+hJ/hpoSEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhIT5wmoc7X1hO0N4n4Xbrsths5uGeyQIJUmSJEmSJEmSJEmSJEmSpP/cE/HHzch3GAMiAAAAAElFTkSuQmCC" width="30">
+                    Sign up with Mircosoft
+                </button>
+            </div>
+
+            <div class="flex flex-col mt-2">
+                <button class="flex items-center border rounded-lg
+                            hover:scale-95 active:scale-105 h-14 justify-center
+                            hover:bg-blue-200 mt-4">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/3840px-Google_%22G%22_logo.svg.png" width="30">
+                    Sign up with Google
+                </button>
+            </div>
+
+            <div class="flex flex-col mt-2">
+                <button class="flex items-center border rounded-lg
+                            hover:scale-95 active:scale-105 h-14 justify-center
+                            hover:bg-blue-200 mt-4">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" width="30">
+                    Sign up with Github
+                </button>
+            </div>
         </form>
         <script src="script.js"></script>
     </body>
