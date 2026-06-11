@@ -80,6 +80,11 @@ submitBtn.addEventListener("click", () => {
             setTimeout(() => {
                 location.reload()
             },1000)
+        } else {
+            triesLeft --
+            numberIndex = Math.floor(Math.random() * 10)
+            number.textContent = numberIndex
+            tries.textContent = triesLeft
         }
     }
 })
