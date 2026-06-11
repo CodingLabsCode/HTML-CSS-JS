@@ -12,53 +12,79 @@ let triesLeft = 3
 const numberFinal = Math.floor(Math.random() * 10)
 let numberIndex = Math.floor(Math.random() * 10)
 
-
+submitBtn.disabled = true
 number.textContent = numberIndex
+
+
+function restartGame() {
+    yes.disabled = true;
+    no.disabled = true;
+    tempText2.textContent = "Restarting in 1 second";
+
+    setTimeout(() => {
+        location.reload();
+    }, 1000);
+}
+
 
 yes.addEventListener("click", () => {
     if (numberFinal == numberIndex) {
-        tempText.textContent = `You got it with ${triesLeft} tries Left`
         yes.disabled = true
         no.disabled = true
         tempText.textContent = `You got it with ${triesLeft} tries left`
-        tempText2.textContent = "Restarting in 1 second"
-        setTimeout(() => {
-            location.reload()
-        },1000)
+        restartGame()
     } else {
-        if (triesLeft == 0) {
+        if (triesLeft <= 0) {
             yes.disabled = true
             no.disabled = true
             tempText.textContent = `You lost the number was ${numberFinal}`
-            tempText2.textContent = "Restarting in 1 second"
-            setTimeout(() => {
-                location.reload()
-            },1000)
+            restartGame()
 
         } else {
-            triesLeft --
-            numberIndex = Math.floor(Math.random() * 10)
-            number.textContent = numberIndex
-            tries.textContent = triesLeft
+            if (numberFinal > numberIndex) {
+                tempText2.textContent = `The number his higher than ${numberIndex}`
+                triesLeft --
+                if (triesLeft == 1) {
+                    submitBtn.disabled = false
+                }
+                numberIndex = Math.floor(Math.random() * 10)
+                number.textContent = numberIndex
+                tries.textContent = triesLeft
+            } else {
+                if (triesLeft == 1) {
+                    submitBtn.disabled = false
+                }
+                tempText2.textContent = `The number is lower than ${numberIndex}`
+                triesLeft --
+                numberIndex = Math.floor(Math.random() * 10)
+                number.textContent = numberIndex
+                tries.textContent = triesLeft
+            }
         }
     }
 })
 
 no.addEventListener("click", () => {
-    if (triesLeft == 0) {
+    if (triesLeft <= 0) {
         yes.disabled = true
         no.disabled = true
         tempText.textContent = `You lost the number was ${numberFinal}`
-        tempText2.textContent = "Restarting in 1 second"
-        setTimeout(() => {
-            location.reload()
-        },1000)
+        restartGame()
 
     } else {
-        triesLeft --
-        numberIndex = Math.floor(Math.random() * 10)
-        number.textContent = numberIndex
-        tries.textContent = triesLeft
+        if (numberFinal > numberIndex) {
+                tempText2.textContent = `The number his higher than ${numberIndex}`
+                triesLeft --
+                numberIndex = Math.floor(Math.random() * 10)
+                number.textContent = numberIndex
+                tries.textContent = triesLeft
+            } else {
+                tempText2.textContent = `The number is lower than ${numberIndex}`
+                triesLeft --
+                numberIndex = Math.floor(Math.random() * 10)
+                number.textContent = numberIndex
+                tries.textContent = triesLeft
+            }
     }
 })
 
@@ -68,23 +94,26 @@ submitBtn.addEventListener("click", () => {
         yes.disabled = true
         no.disabled = true
         tempText.textContent = `You got it with ${triesLeft} tries left`
-        tempText2.textContent = "Restarting in 1 second"
-        setTimeout(() => {
-            location.reload()
-        },1000)
+        restartGame()
 
     } else {
         if (triesLeft == 0) {
             tempText.textContent = `You lost the number was ${numberFinal}`
-            tempText2.textContent = "Restarting in 1 second"
-            setTimeout(() => {
-                location.reload()
-            },1000)
+            restartGame()
         } else {
-            triesLeft --
-            numberIndex = Math.floor(Math.random() * 10)
-            number.textContent = numberIndex
-            tries.textContent = triesLeft
+            if (numberFinal > finalNumber) {
+                tempText2.textContent = `The number his higher than ${finalNumber}`
+                triesLeft --
+                numberIndex = Math.floor(Math.random() * 10)
+                number.textContent = numberIndex
+                tries.textContent = triesLeft
+            } else {
+                tempText2.textContent = `The number is lower than ${finalNumber}`
+                triesLeft --
+                numberIndex = Math.floor(Math.random() * 10)
+                number.textContent = numberIndex
+                tries.textContent = triesLeft
+            }
         }
     }
 })
