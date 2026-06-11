@@ -9,7 +9,7 @@ const number = document.querySelector("#number")
 
 
 let triesLeft = 3
-const numberFinal = 1
+const numberFinal = Math.floor(Math.random() * 10)
 let numberIndex = Math.floor(Math.random() * 10)
 
 
