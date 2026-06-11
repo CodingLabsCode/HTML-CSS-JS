@@ -18,6 +18,13 @@ number.textContent = numberIndex
 yes.addEventListener("click", () => {
     if (numberFinal == numberIndex) {
         tempText.textContent = `You got it with ${triesLeft} tries Left`
+        yes.disabled = true
+        no.disabled = true
+        tempText.textContent = `You got it with ${triesLeft} tries left`
+        tempText2.textContent = "Restarting in 1 second"
+        setTimeout(() => {
+            location.reload()
+        },1000)
     } else {
         if (triesLeft == 0) {
             yes.disabled = true
