@@ -7,7 +7,6 @@ const tries = document.querySelector("#tries")
 const finalnumber = document.querySelector("#final-number")
 const number = document.querySelector("#number")
 
-
 let triesLeft = 3
 const numberFinal = Math.floor(Math.random() * 10)
 let numberIndex = Math.floor(Math.random() * 10)
@@ -75,12 +74,18 @@ no.addEventListener("click", () => {
         if (numberFinal > numberIndex) {
                 tempText2.textContent = `The number his higher than ${numberIndex}`
                 triesLeft --
+                if (triesLeft == 1) {
+                    submitBtn.disabled = false
+                }
                 numberIndex = Math.floor(Math.random() * 10)
                 number.textContent = numberIndex
                 tries.textContent = triesLeft
             } else {
                 tempText2.textContent = `The number is lower than ${numberIndex}`
                 triesLeft --
+                if (triesLeft == 1) {
+                    submitBtn.disabled = false
+                }
                 numberIndex = Math.floor(Math.random() * 10)
                 number.textContent = numberIndex
                 tries.textContent = triesLeft
