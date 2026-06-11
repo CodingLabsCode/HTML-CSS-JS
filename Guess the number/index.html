@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+        <title>Number guessing game</title>
+        <body class="flex justify-center">
+            <main class="shadow-2xl h-screen flex flex-col justify-center p-3 absolute">
+                <h1 class="font-bold text-3xl">Number guessing game</h1>
+                <p class="font-light text-2xl">Guess the number!</p>
+                <br>
+
+                <section class="flex justify-around">
+                    <button class="border p-3 rounded-lg cursor-pointer w-full mr-5 hover:bg-gray-100 transition active:scale-97"
+                        id="lower">
+                        Yes
+                    </button>
+
+                    <div class="flex flex-col items-center font-semibold">
+                        <p>Is</p>
+                        <p class="p-3 rounded-lg text-4xl" id="number">
+                            0
+                        </p>
+                        <p>lower?</p>
+                    </div>
+
+                    <button class="border p-3 rounded-lg cursor-pointer w-full ml-5 hover:bg-gray-100 transition active:scale-97"
+                        id="higher">
+                        No
+                    </button>
+                </section>
+
+                <div class="flex justify-center mt-5">
+                    <input type="text" placeholder="Final number" id="final-number"
+                    class="border p-3 rounded-lg">
+
+                    <button class="p-3 rounded-lg ml-3 bg-green-300 text-black cursor-pointer active:scale-95 transition"
+                        id="submit-btn">
+                        Submit
+                    </button>
+                </div>
+                <hr class="m-5">
+                <div class="flex flex-col items-center">
+                    <p id="temp" class="text-2xl"><span id="tries">3</span> tries remaining</p>
+                    <p id="tempText2"></p>
+                </div>
+            </main>
+            <script src="script.js"></script>
+        </body>
+    </head>
+</html>
+
