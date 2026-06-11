@@ -28,14 +28,10 @@ function restartGame() {
 
 yes.addEventListener("click", () => {
     if (numberFinal == numberIndex) {
-        yes.disabled = true
-        no.disabled = true
         tempText.textContent = `You got it with ${triesLeft} tries left`
         restartGame()
     } else {
         if (triesLeft <= 0) {
-            yes.disabled = true
-            no.disabled = true
             tempText.textContent = `You lost the number was ${numberFinal}`
             restartGame()
 
@@ -65,8 +61,6 @@ yes.addEventListener("click", () => {
 
 no.addEventListener("click", () => {
     if (triesLeft <= 0) {
-        yes.disabled = true
-        no.disabled = true
         tempText.textContent = `You lost the number was ${numberFinal}`
         restartGame()
 
@@ -96,8 +90,6 @@ no.addEventListener("click", () => {
 submitBtn.addEventListener("click", () => {
     const finalNumber = finalnumber.value
     if (finalNumber == numberFinal) {
-        yes.disabled = true
-        no.disabled = true
         tempText.textContent = `You got it with ${triesLeft} tries left`
         restartGame()
 
