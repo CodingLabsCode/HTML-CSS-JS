@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    </head>
+    <body class="h-screen flex justify-center items-center
+            bg-gradient-to-b from-slate-900 via-purple-950 to-slate-900">
+        
+        <main class=" shadow-2xl shadow-black p-4 flex 
+                flex-col justify-center bg-[rgb(33,33,33)] text-white rounded-lg w-2/3">
+            
+                <div>
+                <p class="font-semibold flex justify-center items-center border rounded-[50px]
+                    p-2 hidden" 
+                    id="temptext"
+                    ></p>
+                <h1 class="text-3xl font-bold">Clicker Game</h1>
+                </div>
+            <p class="font-light">Click to gain score</p>
+            
+            <p class="text-xl font-semibold mb-1">Score:
+                    <span id="score">0</span></p>
+            <section class="flex flex-col items-center">
+                <button class="mt-2 border p-4 w-full
+                        hover:bg-white/10 cursor-pointer 
+                        active:scale-95 transition active:rounded-[15px] rounded-[10px]"
+                        id="increase"
+                        >Increase</button>
+                <button class="mt-3 border p-4 w-full
+                        hover:bg-white/10 cursor-pointer 
+                        active:scale-95 transition active:rounded-[15px] rounded-[10px]"
+                        id="decrease"
+                        >Decrease</button>
+                <button class="mt-3 border p-4 w-full
+                        hover:bg-white/10 cursor-pointer 
+                        active:scale-95  transition active:rounded-[15px] rounded-[10px]"
+                        id="reset"
+                        >Reset</button>
+                <button class="mt-3 border p-4 w-full
+                        hover:bg-white/10 transition cursor-pointer 
+                        active:scale-95  transition active:rounded-[15px] mb-2 rounded-[10px]"
+                        id="upgradebtn"
+                        >Upgrade</button>
+            </section>
+            
+            <hr class="mt-3">
+            <h1 class="font-bold text-xl mt-2 mb-2">Statistics</h1>
+            <section>
+                <p class="font-semibold">All time clicks: 
+                    <span class="font-light" id="clicksalltime"
+                    >0</span></p>
+                <p class="font-semibold">Current upgrade lvl : 
+                    <span class="font-light" id="allupgrades"
+                    >0</span></p>
+                <p class="font-semibold">Highest score: 
+                    <span class="font-light" id="highestscore"
+                    >0</span></p>
+                <p class="font-semibold">Amount of resets: 
+                    <span class="font-light" id="amountofreset"
+                    >0</span></p>
+            </section>
+        </main>
+        <script src="script.js"></script>
+    </body>
+</html>
